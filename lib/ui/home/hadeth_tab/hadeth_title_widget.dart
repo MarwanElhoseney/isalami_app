@@ -17,7 +17,7 @@ class hadethTitleWidget extends StatelessWidget {
       child: Container(
       padding: EdgeInsets.symmetric(vertical: 8),
         alignment: Alignment.center,
-        child: Text(hadethItem.hadethTitle,style: TextStyle(color: Colors.black,fontSize: 26,fontWeight: FontWeight.bold),),
+        child: Text(hadethItem.hadethTitle,style: Theme.of(context).textTheme.bodyMedium),
       ),
     );
   }

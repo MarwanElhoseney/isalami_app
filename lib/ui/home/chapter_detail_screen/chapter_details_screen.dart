@@ -26,7 +26,7 @@ class _chapterDetailScreenState extends State<chapterDetailScreen> {
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage("assets/images/main_background.png"))),
+              image: AssetImage(ThemeMode==ThemeMode.light? "assets/images/main_background.png":"assets/images/dark_bg.png"))),
       child: Scaffold(
         appBar: AppBar(
           title: Text(args.title),
@@ -37,7 +37,7 @@ class _chapterDetailScreenState extends State<chapterDetailScreen> {
                 itemBuilder: (context, index) =>
                     versesWidget(verses: verse[index]),
                 separatorBuilder: (context, index) => Container(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).dividerColor,
                       height: 2,
                     ),
                 itemCount: verse.length),

@@ -130,18 +130,17 @@ class quranTabWidget extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 64),
             width: double.infinity,
             height: 2,
-            color: Theme.of(context).colorScheme.primary,
+            color: Theme.of(context).dividerColor,
           ),
           Text(
-            "Chapter Nmae",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 28, color: Colors.black),
+            "Chapter Name",
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 64),
             width: double.infinity,
             height: 2,
-            color: Theme.of(context).colorScheme.primary,
+            color: Theme.of(context).dividerColor,
           ),
           Expanded(
             flex: 3,
@@ -154,7 +153,7 @@ class quranTabWidget extends StatelessWidget {
                       margin: EdgeInsets.symmetric(horizontal: 64),
                       width: double.infinity,
                       height: 2,
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).dividerColor,
                     ),
                 itemCount: suraNames.length),
           )

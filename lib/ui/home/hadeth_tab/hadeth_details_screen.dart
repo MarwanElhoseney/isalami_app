@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/ui/home/hadeth_tab/hadeth_model.dart';
 
@@ -12,7 +12,7 @@ static const String routeName= "hadeathDetailsScreen";
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage("assets/images/main_background.png"))),
+              image: AssetImage(ThemeMode==ThemeMode.light? "assets/images/main_background.png":"assets/images/dark_bg.png"))),
       child: Scaffold(
           appBar: AppBar(
             title: Text(args.hadethTitle,style:TextStyle(fontWeight: FontWeight.bold,fontSize: 26,color: Colors.black),
@@ -28,7 +28,7 @@ static const String routeName= "hadeathDetailsScreen";
               padding: EdgeInsets.all(18),
               child: SingleChildScrollView(
                 child: Text(args.hadethContent,textAlign: TextAlign.center,
-                  textDirection: TextDirection.rtl,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black),),
+                  textDirection: TextDirection.rtl,style: Theme.of(context).textTheme.displaySmall),
               )),
         ),
       ),
