@@ -4,14 +4,18 @@ class myThemeData{
   static Color lightPrimaryColor=Color(0xFFB7935F);
   static Color darkPrimaryColor=Color(0xFF141A2E);
   static Color yellowColor=Color(0xFFFACC1D);
+
   static ThemeData lightTheme=ThemeData(
       primaryColor: lightPrimaryColor,
+      canvasColor: lightPrimaryColor,
+hintColor: Colors.black,
       colorScheme: ColorScheme.fromSeed(
         seedColor: lightPrimaryColor,
         primary: lightPrimaryColor,
         onPrimary: Color(0xFFffffff),
         secondary: Color(0xFFFACC1D),
         onSecondary: Colors.black,
+
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: lightPrimaryColor,
@@ -57,6 +61,8 @@ color: Colors.black ,
 
   static ThemeData darkTheme=ThemeData(
       primaryColor: darkPrimaryColor,
+      canvasColor: yellowColor,
+      hintColor: Colors.white,
       colorScheme: ColorScheme.fromSeed(
         seedColor: darkPrimaryColor,
         primary: darkPrimaryColor,
