@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/providers/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 
 
 class themeBottomSheet extends StatefulWidget {
+
 
 
   @override
@@ -10,15 +13,25 @@ class themeBottomSheet extends StatefulWidget {
 }
 
 class _themeBottomSheetState extends State<themeBottomSheet> {
+
   @override
   Widget build(BuildContext context) {
+    settingsProvider provider=Provider.of<settingsProvider>(context);
     return Container(
       padding: EdgeInsets.all(18),
       child: Column(
         children: [
-          getSelectedTheme("Light"),
+          InkWell(
+              onTap: () {
+                provider.chandeApplicationTheme(ThemeMode.light);
+              },
+              child:provider.currentTheme ==ThemeMode.light ?getSelectedTheme("Light"):getUnselectedTheme("light")),
           SizedBox(height: 8,),
-          getUnselectedTheme("Dark"),
+          InkWell(
+               onTap: () {
+                 provider.chandeApplicationTheme(ThemeMode.dark);
+               },
+              child:provider.currentTheme ==ThemeMode.dark ?getSelectedTheme("dark"):getUnselectedTheme("dark")),
         ],
       ),
     );
@@ -34,7 +47,13 @@ class _themeBottomSheetState extends State<themeBottomSheet> {
     );}
 
   Widget getUnselectedTheme(String UnSlectedTheme){
-   return Text(UnSlectedTheme,style: TextStyle(fontSize: 22,color:Theme.of(context).primaryColor),);
+   return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(UnSlectedTheme,style: TextStyle(fontSize: 22,color: Theme.of(context).primaryColor),),
+
+      ],
+    );
 
   }
 }

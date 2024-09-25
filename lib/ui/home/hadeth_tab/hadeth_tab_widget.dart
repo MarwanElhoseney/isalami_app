@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/ui/home/hadeth_tab/hadeth_model.dart';
 import 'package:islami_app/ui/home/hadeth_tab/hadeth_title_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class hadethTabWidget extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _hadethTabWidgetState extends State<hadethTabWidget> {
             border:Border.symmetric(horizontal: BorderSide( color: Theme.of(context).dividerColor,width: 2)),
 
           ),
-          child: Text("Ahadeth",style: Theme.of(context).textTheme.titleMedium,),
+          child: Text(AppLocalizations.of(context)!.ahadeth,style: Theme.of(context).textTheme.titleMedium,),
         ),
         Expanded(
           flex: 3,
