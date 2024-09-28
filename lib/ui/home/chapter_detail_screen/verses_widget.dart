@@ -13,8 +13,8 @@ class versesWidget extends StatelessWidget {
       child: Text(verses,
           textAlign: TextAlign.center,
           textDirection: TextDirection.rtl,
-          style: TextStyle(
-              fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black)),
+          style:
+              Theme.of(context).textTheme.displaySmall),
     );
   }
 }

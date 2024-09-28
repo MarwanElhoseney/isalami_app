@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app/providers/settings_provider.dart';
 import 'package:islami_app/ui/home/chapter_detail_screen/verses_widget.dart';
 import 'package:islami_app/ui/home/quran_tab/chapter_name_widget.dart';
+import 'package:provider/provider.dart';
 
 class chapterDetailScreen extends StatefulWidget {
   static const String routeName = "chapterDetailsScreen";
@@ -15,6 +17,8 @@ class _chapterDetailScreenState extends State<chapterDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    settingsProvider provider=Provider.of<settingsProvider>(context);
+
     chapterDetailsArgs args =
         ModalRoute.of(context)?.settings.arguments as chapterDetailsArgs;
 
@@ -26,8 +30,8 @@ class _chapterDetailScreenState extends State<chapterDetailScreen> {
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage("assets/images/main_background.png"))),
-      child: Scaffold(
+              image: AssetImage(provider.getBackGrounImage()))),
+       child: Scaffold(
         appBar: AppBar(
           title: Text(args.title),
         ),
@@ -37,7 +41,7 @@ class _chapterDetailScreenState extends State<chapterDetailScreen> {
                 itemBuilder: (context, index) =>
                     versesWidget(verses: verse[index]),
                 separatorBuilder: (context, index) => Container(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).dividerColor,
                       height: 2,
                     ),
                 itemCount: verse.length),
