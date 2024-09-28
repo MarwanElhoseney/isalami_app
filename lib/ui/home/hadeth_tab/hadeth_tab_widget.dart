@@ -36,7 +36,7 @@ class _hadethTabWidgetState extends State<hadethTabWidget> {
         Expanded(
           flex: 3,
           child:allAhadeth.isEmpty? Center(child: CircularProgressIndicator()):
-          ListView.separated(itemBuilder: (context, index) => hadethTitleWidget(hadethItem: allAhadeth[index]),
+          ListView.separated(itemBuilder: (context, index) => hadethTitleWidget(hadethItem: allAhadeth[index],),
               separatorBuilder: (context, index) => Container(
                 color: Theme.of(context).dividerColor,
                 width: double.infinity,
